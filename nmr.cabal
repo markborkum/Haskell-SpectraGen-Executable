@@ -1,0 +1,72 @@
+Name:                nmr
+Version:             0.1.0.0
+Synopsis:            Nuclear Magnetic Resonance (NMR).
+Description:
+  `nmr` is a library for Nuclear Magnetic Resonance (NMR).
+license:             ECL-2.0
+license-file:        LICENSE
+author:              Mark Borkum
+maintainer:          mark.borkum@pnnl.gov
+copyright:           2016 Pacific Northwest National Laboratory
+category:            Chemistry, Physics
+build-type:          Simple
+cabal-version:       >=1.10
+
+Library
+  Other-Extensions:
+    DeriveDataTypeable,
+    DeriveFunctor,
+    FlexibleContexts,
+    GADTs,
+    GeneralizedNewtypeDeriving,
+    KindSignatures,
+    TypeFamilies
+  Exposed-Modules:
+    Data.Normalize,
+    NMR.Apodization,
+    NMR.Noise,
+    NMR.Quantity,
+    NMR.Spectrum,
+    NMR.Types,
+    NMR.Util
+  Build-Depends:
+    base                >=4.7 && <4.8,
+    applicative-numbers >=0.1 && <0.2,
+    array               >=0.5 && <0.6,
+    carray              >=0.1 && <0.2,
+    data-default        >=0.5  && <0.6,
+    fft                 >=0.1 && <0.2,
+    mtl                 >=2.1 && <2.3,
+    random              >=1.0 && <1.1,
+    tagged              >=0.7 && <0.8,
+    transformers        >=0.2 && <0.5
+  GHC-Options:         -O2 -Wall
+  HS-Source-Dirs:      src
+  default-language:    Haskell2010
+
+Executable spectra-gen
+  Main-Is:             Main.hs
+  Other-Extensions:
+    DeriveDataTypeable,
+    DeriveFunctor,
+    FlexibleContexts,
+    GADTs,
+    GeneralizedNewtypeDeriving,
+    KindSignatures,
+    TypeFamilies
+  Build-Depends:
+    base                >=4.7  && <4.8,
+    applicative-numbers >=0.1  && <0.2,
+    array               >=0.5  && <0.6,
+    carray              >=0.1  && <0.2,
+    cmdargs             >=0.10 && <0.11,
+    data-default        >=0.5  && <0.6,
+    fft                 >=0.1  && <0.2,
+    mtl                 >=2.1  && <2.3,
+    pipes               >=4.1  && <4.2,
+    random              >=1.0  && <1.1,
+    tagged              >=0.7  && <0.8,
+    transformers        >=0.2  && <0.5
+  GHC-Options:         -O2 -Wall
+  HS-Source-Dirs:      src
+  default-language:    Haskell2010
